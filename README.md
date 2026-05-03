@@ -243,7 +243,7 @@ Cybersecurity and AI Security, HCLTech, Dallas, TX, USA
 sunil.gentyala@ieee.org | [IEEE Profile](https://www.ieee.org)
 
 **Floriano Caprio**
-HCLTech (HCL America Inc.), Dallas, TX, USA
+HCLTech, Rome, Latium, Italy
 floriano.caprio@hcltech.com
 
 ---
