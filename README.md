@@ -267,5 +267,3 @@ This repository contains only the companion **software artifact** — not the ma
 ## Related Work
 
 - Mudusu & Gentyala 2026 — Zero-trust AI pipelines: DOI 10.70589/JRTCSE.2026.14.2.2
-- Gentyala 2026 — AI-SBOM: DOI 10.14738/tmlai.1401.19884
-- Gentyala 2026 — Frontiers: DOI 10.3389/fcomp.2026.1735919
