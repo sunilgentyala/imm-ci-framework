@@ -1,0 +1,39 @@
+# IMM-CI Assessment Profile: Water/Wastewater — Level 3 (Post-Pilot)
+# Lakeshore Metropolitan Water Authority after 18-month IMM-CI transition.
+# Documented in paper Section XIV-A. FIDO2 deployed for privileged users,
+# SCIM deprovisioning latency reduced 93%, ITDR active at IT/OT boundary.
+# Two open NERC CIP-equivalent audit findings closed.
+
+organization: "Lakeshore Metropolitan Water Authority (Level 3 Post-Pilot)"
+
+iam:
+  password_only: false
+  mfa_enforced: true
+  ldap_ad_integration: true
+  partial_abac: true
+  fido2_deployed: true          # 100% privileged accounts; hardware TOTP for legacy HMI
+  scim_provisioning: true       # Via SCIM proxy for legacy LDAP-only SCADA systems
+  itdr_deployed: true           # Defender for Identity + Entra ID Protection at IT/OT boundary
+  spiffe_spire: false
+  dids_piloted: false
+  full_ssi: false
+  autonomous_jml: false
+
+zero_trust:
+  perimeter_only: false
+  network_segmentation: true
+  some_zt_policies: true
+  identity_control_plane: true  # Entra ID as primary control plane for OT access
+  caep_risc_active: true        # CAEP events at IT/OT boundary
+  continuous_evaluation: false
+  behavioral_analytics: false
+  full_zta: false
+  crypto_attestation_all: false
+
+pqc:
+  classical_only: false
+  crypto_inventory: true
+  migration_plan: true          # 14 systems identified for algorithm-agility remediation
+  hybrid_pqc_test: true         # Lab environment with ML-KEM test certificates
+  mlkem_mldsa_production: false
+  crypto_agility_achieved: false

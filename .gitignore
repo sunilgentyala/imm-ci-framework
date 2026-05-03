@@ -8,3 +8,4 @@ build/
 .env
 *.json
 !tests/lakeshore_baseline_result.json
+!results/benchmark_results.json

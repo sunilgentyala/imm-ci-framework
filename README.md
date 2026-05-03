@@ -250,7 +250,17 @@ floriano.caprio@hcltech.com
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The IMM-CI framework concept and associated paper are published under IEEE copyright. This software implementation is independently licensed under MIT for unrestricted research and practitioner use.
+MIT — see [LICENSE](LICENSE).
+
+**Software (this repository):** MIT license — unrestricted research and practitioner use.
+
+**Associated paper:** Copyright transferred to IEEE (signed 03-05-2026) for the 2026 International Conference on Smart Applications, Communications and Networking (SmartNets). Per IEEE Author Online Use policy:
+
+- The **accepted manuscript** (not the final IEEE-typeset version) may be posted on personal or institutional servers with a prominently displayed IEEE copyright notice and full citation linking to the IEEE Xplore abstract.
+- The **final published PDF** from IEEE Xplore may not be redistributed or posted anywhere.
+- After publication, any preprint must be replaced with a full citation and DOI link to the IEEE Xplore record.
+
+This repository contains only the companion **software artifact** — not the manuscript. The code is independently MIT-licensed.
 
 ---
 
