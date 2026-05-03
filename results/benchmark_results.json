@@ -1,0 +1,102 @@
+{
+  "generated": "2026-05-03T17:30:49.215057+00:00",
+  "tool_version": "1.0.0",
+  "paper": "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure",
+  "conference": "SmartNets 2026 CyberSec CIIA",
+  "authors": [
+    "Sunil Gentyala",
+    "Floriano Caprio"
+  ],
+  "profiles": [
+    {
+      "profile_label": "Energy Sector \u2014 Level 1 Baseline",
+      "config_file": "config/energy_sector_level1.yaml",
+      "composite_level": 1,
+      "iam_level": 1,
+      "iam_score": 0.0,
+      "zt_level": 1,
+      "zt_score": 0.0,
+      "pqc_level": 1,
+      "pqc_score": 0.0,
+      "stall_warning": false,
+      "executive_summary": "Regional Electric Cooperative (Level 1 Baseline) assessed at IMM-CI Level 1 (Foundational). IAM: L1 | Zero Trust: L1 | PQC Readiness: L1.",
+      "top_priority_actions": [
+        "Implement: FIDO2/passkeys deployed (impact weight: 20)",
+        "Implement: MFA enforced for all users (impact weight: 20)",
+        "Implement: Identity is the control plane (impact weight: 20)"
+      ]
+    },
+    {
+      "profile_label": "Water/Wastewater \u2014 Level 2 Baseline (Lakeshore MWA)",
+      "config_file": "config/sample_org.yaml",
+      "composite_level": 2,
+      "iam_level": 2,
+      "iam_score": 28.6,
+      "zt_level": 2,
+      "zt_score": 25.0,
+      "pqc_level": 2,
+      "pqc_score": 18.2,
+      "stall_warning": true,
+      "executive_summary": "Lakeshore Metropolitan Water Authority (Pilot Baseline) assessed at IMM-CI Level 2 (Structured). IAM: L2 | Zero Trust: L2 | PQC Readiness: L2. The organization shows the Level 2->3 stall pattern identified in the IMM-CI model. Vendor coordination, downtime window planning, and FIDO2 HMI compatibility are likely blockers.",
+      "top_priority_actions": [
+        "Implement: FIDO2/passkeys deployed (impact weight: 20)",
+        "Implement: SPIFFE/SPIRE for workload identity (impact weight: 15)",
+        "Implement: Identity is the control plane (impact weight: 20)"
+      ]
+    },
+    {
+      "profile_label": "Healthcare CI \u2014 Level 2",
+      "config_file": "config/healthcare_level2.yaml",
+      "composite_level": 2,
+      "iam_level": 2,
+      "iam_score": 28.6,
+      "zt_level": 2,
+      "zt_score": 25.0,
+      "pqc_level": 2,
+      "pqc_score": 18.2,
+      "stall_warning": true,
+      "executive_summary": "Regional Hospital Network (Level 2 \u00e2\u20ac\u201d Healthcare CI) assessed at IMM-CI Level 2 (Structured). IAM: L2 | Zero Trust: L2 | PQC Readiness: L2. The organization shows the Level 2->3 stall pattern identified in the IMM-CI model. Vendor coordination, downtime window planning, and FIDO2 HMI compatibility are likely blockers.",
+      "top_priority_actions": [
+        "Implement: FIDO2/passkeys deployed (impact weight: 20)",
+        "Implement: SPIFFE/SPIRE for workload identity (impact weight: 15)",
+        "Implement: Identity is the control plane (impact weight: 20)"
+      ]
+    },
+    {
+      "profile_label": "Water/Wastewater \u2014 Level 3 Post-Pilot (Lakeshore MWA)",
+      "config_file": "config/water_level3_post_pilot.yaml",
+      "composite_level": 3,
+      "iam_level": 3,
+      "iam_score": 64.3,
+      "zt_level": 3,
+      "zt_score": 54.2,
+      "pqc_level": 3,
+      "pqc_score": 54.5,
+      "stall_warning": false,
+      "executive_summary": "Lakeshore Metropolitan Water Authority (Level 3 Post-Pilot) assessed at IMM-CI Level 3 (Defined). IAM: L3 | Zero Trust: L3 | PQC Readiness: L3.",
+      "top_priority_actions": [
+        "Implement: SPIFFE/SPIRE for workload identity (impact weight: 15)",
+        "Implement: Full SSI / verifiable credentials (impact weight: 15)",
+        "Implement: Continuous trust evaluation (impact weight: 15)"
+      ]
+    },
+    {
+      "profile_label": "Financial Services CI \u2014 Level 4",
+      "config_file": "config/financial_level4.yaml",
+      "composite_level": 4,
+      "iam_level": 4,
+      "iam_score": 82.1,
+      "zt_level": 4,
+      "zt_score": 79.2,
+      "pqc_level": 4,
+      "pqc_score": 77.3,
+      "stall_warning": false,
+      "executive_summary": "Tier-1 Payment Processor (Level 4 \u00e2\u20ac\u201d Financial CI) assessed at IMM-CI Level 4 (Managed). IAM: L4 | Zero Trust: L4 | PQC Readiness: L4.",
+      "top_priority_actions": [
+        "Implement: Full SSI / verifiable credentials (impact weight: 15)",
+        "Implement: Autonomous JML lifecycle (impact weight: 10)",
+        "Implement: Full Zero Trust Architecture (impact weight: 15)"
+      ]
+    }
+  ]
+}
