@@ -1,0 +1,41 @@
+# IMM-CI Assessment Configuration
+# Companion artifact to: "The Metamorphosis of Access"
+# SmartNets 2026 - CyberSec CIIA
+#
+# Fill in true/false for each control.
+# This file represents a typical Level 2 industrial operator
+# (the "Lakeshore MWA" pilot baseline from the case study).
+
+organization: "Lakeshore Metropolitan Water Authority (Pilot Baseline)"
+
+iam:
+  password_only: false          # Password-only on any system?
+  mfa_enforced: true            # MFA enforced for ALL users?
+  ldap_ad_integration: true     # LDAP/AD integrated?
+  partial_abac: true            # Partial attribute-based access control?
+  fido2_deployed: false         # FIDO2/passkeys deployed?
+  scim_provisioning: false      # SCIM provisioning active?
+  itdr_deployed: false          # ITDR platform deployed?
+  spiffe_spire: false           # SPIFFE/SPIRE for workload identity?
+  dids_piloted: false           # DIDs piloted?
+  full_ssi: false               # Full SSI/verifiable credentials?
+  autonomous_jml: false         # Autonomous JML lifecycle?
+
+zero_trust:
+  perimeter_only: false         # Still purely perimeter-based?
+  network_segmentation: true    # Network segmentation in place?
+  some_zt_policies: true        # Some ZT policies enforced?
+  identity_control_plane: false # Identity IS the control plane?
+  caep_risc_active: false       # CAEP/RISC session signals active?
+  continuous_evaluation: false  # Continuous trust evaluation?
+  behavioral_analytics: false   # Behavioral analytics live?
+  full_zta: false               # Full Zero Trust Architecture?
+  crypto_attestation_all: false # Crypto attestation on all entities?
+
+pqc:
+  classical_only: false         # Classical only, no plan at all?
+  crypto_inventory: true        # Cryptographic inventory documented?
+  migration_plan: false         # PQC migration plan exists?
+  hybrid_pqc_test: false        # Hybrid PQC in test environments?
+  mlkem_mldsa_production: false # ML-KEM/ML-DSA in production?
+  crypto_agility_achieved: false # Cryptographic agility fully achieved?

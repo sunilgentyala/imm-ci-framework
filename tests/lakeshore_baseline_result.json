@@ -1,0 +1,73 @@
+{
+  "org_name": "Lakeshore Metropolitan Water Authority (Pilot Baseline)",
+  "assessment_date": "2026-05-03",
+  "iam_score": {
+    "dimension": "IAM Capabilities",
+    "raw_score": 28.6,
+    "level": 2,
+    "gaps": [
+      "Missing capability: SCIM provisioning active",
+      "Missing capability: SPIFFE/SPIRE for workload identity",
+      "Missing capability: ITDR deployed",
+      "Missing capability: FIDO2/passkeys deployed",
+      "Missing capability: Autonomous JML lifecycle",
+      "Missing capability: Full SSI / verifiable credentials",
+      "Missing capability: Decentralized Identifiers piloted"
+    ],
+    "next_steps": [
+      "Implement: FIDO2/passkeys deployed (impact weight: 20)",
+      "Implement: SCIM provisioning active (impact weight: 15)",
+      "Implement: SPIFFE/SPIRE for workload identity (impact weight: 15)",
+      "Implement: ITDR deployed (impact weight: 15)",
+      "Implement: Full SSI / verifiable credentials (impact weight: 15)"
+    ]
+  },
+  "zt_score": {
+    "dimension": "Zero Trust Posture",
+    "raw_score": 25.0,
+    "level": 2,
+    "gaps": [
+      "Missing capability: CAEP/RISC session signals active",
+      "Missing capability: Identity is the control plane",
+      "Missing capability: Full Zero Trust Architecture",
+      "Missing capability: Behavioral analytics live",
+      "Missing capability: Continuous trust evaluation",
+      "Missing capability: Cryptographic attestation on all entities"
+    ],
+    "next_steps": [
+      "Implement: Identity is the control plane (impact weight: 20)",
+      "Implement: CAEP/RISC session signals active (impact weight: 15)",
+      "Implement: Full Zero Trust Architecture (impact weight: 15)",
+      "Implement: Behavioral analytics live (impact weight: 15)",
+      "Implement: Continuous trust evaluation (impact weight: 15)"
+    ]
+  },
+  "pqc_score": {
+    "dimension": "PQC Readiness",
+    "raw_score": 18.2,
+    "level": 2,
+    "gaps": [
+      "Missing capability: Hybrid classical-PQC in test environments",
+      "Missing capability: Cryptographic agility achieved (algorithm-agnostic IAM)",
+      "Missing capability: ML-KEM / ML-DSA in production (select systems)",
+      "Missing capability: PQC migration plan exists"
+    ],
+    "next_steps": [
+      "Implement: Cryptographic agility achieved (algorithm-agnostic IAM) (impact weight: 25)",
+      "Implement: ML-KEM / ML-DSA in production (select systems) (impact weight: 25)",
+      "Implement: Hybrid classical-PQC in test environments (impact weight: 20)",
+      "Implement: PQC migration plan exists (impact weight: 20)"
+    ]
+  },
+  "composite_level": 2,
+  "stall_warning": true,
+  "executive_summary": "Lakeshore Metropolitan Water Authority (Pilot Baseline) assessed at IMM-CI Level 2 (Structured). IAM: L2 | Zero Trust: L2 | PQC Readiness: L2. The organization shows the Level 2->3 stall pattern identified in the IMM-CI model. Vendor coordination, downtime window planning, and FIDO2 HMI compatibility are likely blockers.",
+  "priority_actions": [
+    "Implement: FIDO2/passkeys deployed (impact weight: 20)",
+    "Implement: SCIM provisioning active (impact weight: 15)",
+    "Implement: Identity is the control plane (impact weight: 20)",
+    "Implement: CAEP/RISC session signals active (impact weight: 15)",
+    "Implement: Cryptographic agility achieved (algorithm-agnostic IAM) (impact weight: 25)",
+    "Implement: ML-KEM / ML-DSA in production (select systems) (impact weight: 25)"
+  ]
+}
