@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.env
+*.json
+!tests/lakeshore_baseline_result.json
+!results/benchmark_results.json

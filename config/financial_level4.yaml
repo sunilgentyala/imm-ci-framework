@@ -1,0 +1,38 @@
+# IMM-CI Assessment Profile: Financial Services Critical Infrastructure — Level 4
+# Represents a tier-1 payment processing operator with mature Zero Trust posture,
+# SPIFFE/SPIRE for microservice workload identity, and ML-KEM in production
+# for select high-value data paths. Operating under PCI-DSS 4.0 and DORA.
+
+organization: "Tier-1 Payment Processor (Level 4 — Financial CI)"
+
+iam:
+  password_only: false
+  mfa_enforced: true
+  ldap_ad_integration: true
+  partial_abac: true
+  fido2_deployed: true
+  scim_provisioning: true
+  itdr_deployed: true
+  spiffe_spire: true            # SPIRE deployed for 4,200+ microservice workloads
+  dids_piloted: true            # Contractor credentialing pilot (selective disclosure)
+  full_ssi: false
+  autonomous_jml: false
+
+zero_trust:
+  perimeter_only: false
+  network_segmentation: true
+  some_zt_policies: true
+  identity_control_plane: true
+  caep_risc_active: true
+  continuous_evaluation: true   # Per-transaction trust evaluation on payment paths
+  behavioral_analytics: true    # ML-based anomaly detection on service account activity
+  full_zta: false
+  crypto_attestation_all: false
+
+pqc:
+  classical_only: false
+  crypto_inventory: true
+  migration_plan: true
+  hybrid_pqc_test: true
+  mlkem_mldsa_production: true  # ML-KEM on high-value API key exchange; ML-DSA on audit logs
+  crypto_agility_achieved: false

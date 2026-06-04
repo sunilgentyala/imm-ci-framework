@@ -1,0 +1,38 @@
+# IMM-CI Assessment Profile: Energy Sector — Level 1 Baseline
+# Represents a small regional electric cooperative operating legacy SCADA
+# with no formal IAM program. Typical of operators below the NERC CIP
+# high-impact threshold who have not yet been required to formalize identity controls.
+
+organization: "Regional Electric Cooperative (Level 1 Baseline)"
+
+iam:
+  password_only: true           # Shared passwords on SCADA HMI consoles
+  mfa_enforced: false
+  ldap_ad_integration: false    # Workgroup-based, no centralized directory
+  partial_abac: false
+  fido2_deployed: false
+  scim_provisioning: false
+  itdr_deployed: false
+  spiffe_spire: false
+  dids_piloted: false
+  full_ssi: false
+  autonomous_jml: false
+
+zero_trust:
+  perimeter_only: true          # Flat network, implicit internal trust
+  network_segmentation: false
+  some_zt_policies: false
+  identity_control_plane: false
+  caep_risc_active: false
+  continuous_evaluation: false
+  behavioral_analytics: false
+  full_zta: false
+  crypto_attestation_all: false
+
+pqc:
+  classical_only: true          # RSA-1024 in some legacy endpoints
+  crypto_inventory: false       # No inventory exists
+  migration_plan: false
+  hybrid_pqc_test: false
+  mlkem_mldsa_production: false
+  crypto_agility_achieved: false

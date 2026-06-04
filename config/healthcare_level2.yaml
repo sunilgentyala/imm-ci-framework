@@ -1,0 +1,39 @@
+# IMM-CI Assessment Profile: Healthcare Critical Infrastructure — Level 2
+# Represents a regional hospital network operating medical IoT devices,
+# infusion pumps, and clinical workstations under HIPAA and HITECH.
+# MFA deployed post-breach in 2024; LDAP-based provisioning still manual.
+# Machine identity (medical device certs) largely unmanaged.
+
+organization: "Regional Hospital Network (Level 2 — Healthcare CI)"
+
+iam:
+  password_only: false
+  mfa_enforced: true            # Enforced post-2024 ransomware incident
+  ldap_ad_integration: true
+  partial_abac: true            # Role-based on clinical role + ward
+  fido2_deployed: false         # Phlebotomy workflows block hardware token adoption
+  scim_provisioning: false      # Manual JML via ticketing system
+  itdr_deployed: false
+  spiffe_spire: false
+  dids_piloted: false
+  full_ssi: false
+  autonomous_jml: false
+
+zero_trust:
+  perimeter_only: false
+  network_segmentation: true    # Clinical vs. administrative VLANs
+  some_zt_policies: true        # NAC on clinical workstations
+  identity_control_plane: false
+  caep_risc_active: false
+  continuous_evaluation: false
+  behavioral_analytics: false
+  full_zta: false
+  crypto_attestation_all: false
+
+pqc:
+  classical_only: false
+  crypto_inventory: true        # Completed for HIPAA risk assessment
+  migration_plan: false
+  hybrid_pqc_test: false
+  mlkem_mldsa_production: false
+  crypto_agility_achieved: false

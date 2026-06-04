@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite both the tool and the associated paper."
+type: software
+title: "IMM-CI Self-Assessment Tool"
+abstract: >
+  A command-line self-assessment tool that scores an organization against the
+  Identity Maturity Model for Critical Infrastructure (IMM-CI) — a five-level
+  framework evaluating IAM capability, Zero Trust posture, and post-quantum
+  cryptography readiness as a single unified progression. Companion artifact to
+  the SmartNets 2026 CyberSec CIIA paper.
+authors:
+  - family-names: Gentyala
+    given-names: Sunil
+    email: sunil.gentyala@ieee.org
+    affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+  - family-names: Caprio
+    given-names: Floriano
+    email: floriano.caprio@hcltech.com
+    affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+version: "1.0.0"
+date-released: "2026-05-03"
+license: MIT
+repository-code: "https://github.com/sunilgentyala/imm-ci-framework"
+keywords:
+  - identity-and-access-management
+  - zero-trust-architecture
+  - post-quantum-cryptography
+  - critical-infrastructure
+  - operational-technology
+  - cybersecurity
+  - maturity-model
+  - FIDO2
+  - SCIM
+  - OIDC
+
+references:
+  - type: conference-paper
+    title: "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure"
+    authors:
+      - family-names: Gentyala
+        given-names: Sunil
+        email: sunil.gentyala@ieee.org
+      - family-names: Caprio
+        given-names: Floriano
+        email: floriano.caprio@hcltech.com
+    conference:
+      name: "SmartNets 2026 - International Conference on Smart Applications, Communications and Networking: Cyber Security for Critical Infrastructure and Industrial Applications (CyberSec CIIA)"
+    year: 2026
+    publisher:
+      name: IEEE
+    collection-title: "SmartNets 2026 Conference Proceedings"
+    notes: "EDAS Paper ID: 1571252869. To be published in IEEE Xplore."
