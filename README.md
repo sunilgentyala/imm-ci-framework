@@ -1,4 +1,4 @@
-# IMM-CI Self-Assessment Tool
+﻿# IMM-CI Self-Assessment Tool
 
 [![Tests](https://github.com/sunilgentyala/imm-ci-framework/actions/workflows/tests.yml/badge.svg)](https://github.com/sunilgentyala/imm-ci-framework/actions/workflows/tests.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
@@ -9,16 +9,16 @@
 Companion artifact to the IEEE SmartNets 2026 paper:
 
 > **"The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure"**
-> Sunil Gentyala, Floriano Caprio — HCLTech, Dallas TX
-> *SmartNets 2026 — CyberSec CIIA | IEEE Xplore (forthcoming)*
+> Sunil Gentyala, Floriano Caprio, Sunil Kumar Mudusu, Suresh Kumar Darisi, Satish Kumar Allani
+> *SmartNets 2026 -- CyberSec CIIA | IEEE Xplore (forthcoming)*
 
 ---
 
 ## What Is the IMM-CI?
 
-The **Identity Maturity Model for Critical Infrastructure (IMM-CI)** is a five-level framework that evaluates an organization's IAM capability, Zero Trust posture, and post-quantum cryptography readiness as a single unified progression — not three separate workstreams.
+The **Identity Maturity Model for Critical Infrastructure (IMM-CI)** is a five-level framework that evaluates an organization's IAM capability, Zero Trust posture, and post-quantum cryptography readiness as a single unified progression -- not three separate workstreams.
 
-Most IAM maturity models treat these as independent tracks. The IMM-CI integrates them because they are genuinely interdependent: your PQC migration choices are constrained by your current authentication infrastructure; your Zero Trust posture determines how much blast radius a compromised identity can create. A Level 3 IAM posture combined with Level 1 PQC readiness is a specific, identifiable risk — and the model makes that asymmetry visible.
+Most IAM maturity models treat these as independent tracks. The IMM-CI integrates them because they are genuinely interdependent: your PQC migration choices are constrained by your current authentication infrastructure; your Zero Trust posture determines how much blast radius a compromised identity can create. A Level 3 IAM posture combined with Level 1 PQC readiness is a specific, identifiable risk -- and the model makes that asymmetry visible.
 
 | Level | Stage | IAM | Zero Trust | PQC |
 |-------|-------|-----|------------|-----|
@@ -28,7 +28,7 @@ Most IAM maturity models treat these as independent tracks. The IMM-CI integrate
 | 4 | Managed | SPIFFE/SPIRE, DIDs piloted, SSF integrated | Continuous evaluation, behavioral analytics | ML-KEM/ML-DSA in production |
 | 5 | Optimized | Full SSI, verifiable credentials, AI ITDR | Full ZTA, cryptographic attestation | Cryptographic agility achieved |
 
-The Level 2→3 transition is where most industrial operators stall. This tool is designed specifically to diagnose why.
+The Level 2 to Level 3 transition is where most industrial operators stall. This tool is designed specifically to diagnose why.
 
 ---
 
@@ -144,9 +144,9 @@ pqc:
 
 ### Scoring Notes
 
-- **Composite level** uses the weakest-link principle: `min(IAM level, ZT level, PQC level)`. A Level 4 IAM posture with Level 1 PQC readiness gives a composite of Level 1 — the model makes that gap visible rather than averaging it away.
-- **Scores are normalized** per dimension against the maximum possible positive weight for that rubric. This means Level 2 capability combinations consistently score in the 20–35 range and Level 3 combinations in the 35–70 range across all three dimensions.
-- **Stall detection** flags the L2→L3 pattern: IAM at Level 2, ZT at Level 2–3, PQC at Level 1–2. This is the most common failure mode for industrial operators documented in the paper.
+- **Composite level** uses the weakest-link principle: `min(IAM level, ZT level, PQC level)`. A Level 4 IAM posture with Level 1 PQC readiness gives a composite of Level 1 -- the model makes that gap visible rather than averaging it away.
+- **Scores are normalized** per dimension against the maximum possible positive weight for that rubric. This means Level 2 capability combinations consistently score in the 20-35 range and Level 3 combinations in the 35-70 range across all three dimensions.
+- **Stall detection** flags the L2 to L3 pattern: IAM at Level 2, ZT at Level 2-3, PQC at Level 1-2. This is the most common failure mode for industrial operators documented in the paper.
 
 ---
 
@@ -163,8 +163,8 @@ The IMM-CI rubric maps directly to published standards:
 | Provisioning | RFC 7643 (SCIM Core Schema) |
 | Machine Identity | SPIFFE/SPIRE (CNCF, 2024) |
 | Continuous Session Evaluation | OpenID CAEP 1.0; OpenID SSF 1.0 |
-| Key Encapsulation (PQC) | FIPS 203 — ML-KEM (August 2024) |
-| Digital Signatures (PQC) | FIPS 204 — ML-DSA (August 2024) |
+| Key Encapsulation (PQC) | FIPS 203 -- ML-KEM (August 2024) |
+| Digital Signatures (PQC) | FIPS 204 -- ML-DSA (August 2024) |
 | Zero Trust Architecture | NIST SP 800-207 |
 | Verifiable Credentials | W3C VC Data Model v2.0 (2024) |
 
@@ -176,7 +176,7 @@ The tool's level definitions were validated against a structured 18-month pilot 
 
 | Metric | Baseline (L2) | Post-Pilot (L3) |
 |--------|--------------|-----------------|
-| Deprovisioning latency (mean) | 5.2 days | 2.8 hours (−93%) |
+| Deprovisioning latency (mean) | 5.2 days | 2.8 hours (-93%) |
 | FIDO2 on privileged accounts | 0% | 100% |
 | Machine identity w/ defined expiry | 34% | 91% |
 | Machine identity w/ auto-rotation | 11% | 68% |
@@ -217,7 +217,8 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
 
 ```bibtex
 @inproceedings{gentyala2026metamorphosis,
-  author    = {Gentyala, Sunil and Caprio, Floriano},
+  author    = {Gentyala, Sunil and Caprio, Floriano and Mudusu, Sunil Kumar
+               and Darisi, Suresh Kumar and Allani, Satish Kumar},
   title     = {The Metamorphosis of Access: Strategic Imperatives for Identity 3.0
                and Zero Trust Integration in Critical Infrastructure},
   booktitle = {Proceedings of SmartNets 2026 -- International Conference on Smart
@@ -230,7 +231,7 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
 
 ### IEEE Format
 
-S. Gentyala and F. Caprio, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026.
+S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026.
 
 ### Software Citation
 
@@ -240,21 +241,33 @@ To cite this tool specifically, use the `CITATION.cff` file in this repository. 
 
 ## Authors
 
-**Sunil Gentyala** — IEEE Senior Member
-Cybersecurity and AI Security, HCLTech, Dallas, TX, USA
+**Sunil Gentyala** -- IEEE Senior Member
+Lead Cybersecurity and AI Security Consultant, HCLTech (HCL America Inc.), Dallas, TX, USA
 sunil.gentyala@ieee.org
 
 **Floriano Caprio**
-HCLTech (HCL America Inc.), Dallas, TX, USA
+Senior Solution Architect, HPC & AI Specialist, Quantum Computing, HCLTech (Italy), Rome, Italy
 floriano.caprio@hcltech.com
+
+**Sunil Kumar Mudusu**
+Principal AI and Data Engineer, Church Mutual Insurance Company, Austin, TX, USA
+sunil.mudusu@ieee.org
+
+**Suresh Kumar Darisi**
+Senior Systems Engineer, Rocket Software Inc., Boston, MA, USA
+Darisi.suresh@ieee.org
+
+**Satish Kumar Allani**
+Enterprise Vulnerability & Patch Management Lead, Yash Technologies, Aurora, IL, USA
+Satishkumarallani@ieee.org
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT -- see [LICENSE](LICENSE).
 
-**Software (this repository):** MIT license — unrestricted research and practitioner use.
+**Software (this repository):** MIT license -- unrestricted research and practitioner use.
 
 **Associated paper:** Copyright transferred to IEEE (signed 03-05-2026) for the 2026 International Conference on Smart Applications, Communications and Networking (SmartNets). Per IEEE Author Online Use policy:
 
@@ -262,10 +275,10 @@ MIT — see [LICENSE](LICENSE).
 - The **final published PDF** from IEEE Xplore may not be redistributed or posted anywhere.
 - After publication, any preprint must be replaced with a full citation and DOI link to the IEEE Xplore record.
 
-This repository contains only the companion **software artifact** — not the manuscript. The code is independently MIT-licensed.
+This repository contains only the companion **software artifact** -- not the manuscript. The code is independently MIT-licensed.
 
 ---
 
 ## Related Work
 
-- Mudusu & Gentyala 2026 — Zero-trust AI pipelines: DOI 10.70589/JRTCSE.2026.14.2.2
+- Mudusu & Gentyala 2026 -- Zero-trust AI pipelines: DOI 10.70589/JRTCSE.2026.14.2.2
