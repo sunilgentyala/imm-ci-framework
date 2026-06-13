@@ -1,10 +1,10 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 message: "If you use this software in your research, please cite both the tool and the associated paper."
 type: software
 title: "IMM-CI Self-Assessment Tool"
 abstract: >
   A command-line self-assessment tool that scores an organization against the
-  Identity Maturity Model for Critical Infrastructure (IMM-CI) — a five-level
+  Identity Maturity Model for Critical Infrastructure (IMM-CI) -- a five-level
   framework evaluating IAM capability, Zero Trust posture, and post-quantum
   cryptography readiness as a single unified progression. Companion artifact to
   the SmartNets 2026 CyberSec CIIA paper.
@@ -16,7 +16,19 @@ authors:
   - family-names: Caprio
     given-names: Floriano
     email: floriano.caprio@hcltech.com
-    affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+    affiliation: "HCLTech (Italy), Rome, Italy"
+  - family-names: Mudusu
+    given-names: Sunil Kumar
+    email: sunil.mudusu@ieee.org
+    affiliation: "Church Mutual Insurance Company, Austin, TX, USA"
+  - family-names: Darisi
+    given-names: Suresh Kumar
+    email: Darisi.suresh@ieee.org
+    affiliation: "Rocket Software Inc., Boston, MA, USA"
+  - family-names: Allani
+    given-names: Satish Kumar
+    email: Satishkumarallani@ieee.org
+    affiliation: "Yash Technologies, Aurora, IL, USA"
 version: "1.0.0"
 date-released: "2026-05-03"
 license: MIT
@@ -43,6 +55,15 @@ references:
       - family-names: Caprio
         given-names: Floriano
         email: floriano.caprio@hcltech.com
+      - family-names: Mudusu
+        given-names: Sunil Kumar
+        email: sunil.mudusu@ieee.org
+      - family-names: Darisi
+        given-names: Suresh Kumar
+        email: Darisi.suresh@ieee.org
+      - family-names: Allani
+        given-names: Satish Kumar
+        email: Satishkumarallani@ieee.org
     conference:
       name: "SmartNets 2026 - International Conference on Smart Applications, Communications and Networking: Cyber Security for Critical Infrastructure and Industrial Applications (CyberSec CIIA)"
     year: 2026
