@@ -70,4 +70,5 @@ references:
     publisher:
       name: IEEE
     collection-title: "SmartNets 2026 Conference Proceedings"
-    notes: "EDAS Paper ID: 1571252869. To be published in IEEE Xplore."
+    url: "https://ieeexplore.ieee.org/document/11604842"
+    notes: "EDAS Paper ID: 1571252869."

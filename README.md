@@ -3,14 +3,14 @@
 [![Tests](https://github.com/sunilgentyala/imm-ci-framework/actions/workflows/tests.yml/badge.svg)](https://github.com/sunilgentyala/imm-ci-framework/actions/workflows/tests.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![IEEE Paper](https://img.shields.io/badge/IEEE-SmartNets%202026-blue)](https://edas.info/showPaper.php?m=1571252869)
+[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-Published-blue)](https://ieeexplore.ieee.org/document/11604842)
 [![Cite](https://img.shields.io/badge/cite-CITATION.cff-orange)](CITATION.cff)
 
 Companion artifact to the IEEE SmartNets 2026 paper:
 
 > **"The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure"**
 > Sunil Gentyala, Floriano Caprio, Sunil Kumar Mudusu, Suresh Kumar Darisi, Satish Kumar Allani
-> *SmartNets 2026 -- CyberSec CIIA | IEEE Xplore (forthcoming)*
+> *SmartNets 2026 -- CyberSec CIIA | Published in IEEE Xplore: [ieeexplore.ieee.org/document/11604842](https://ieeexplore.ieee.org/document/11604842)*
 
 ---
 
@@ -225,13 +225,14 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
                Applications, Communications and Networking (CyberSec CIIA Track)},
   year      = {2026},
   publisher = {IEEE},
-  note      = {EDAS Paper ID: 1571252869. To appear in IEEE Xplore.}
+  note      = {EDAS Paper ID: 1571252869.},
+  url       = {https://ieeexplore.ieee.org/document/11604842}
 }
 ```
 
 ### IEEE Format
 
-S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026.
+S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026. Available: https://ieeexplore.ieee.org/document/11604842
 
 ### Software Citation
 
