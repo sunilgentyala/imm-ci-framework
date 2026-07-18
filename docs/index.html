@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMM-CI | Identity Maturity Model for Critical Infrastructure</title>
+<meta name="description" content="IMM-CI is a five-level maturity model unifying IAM, Zero Trust, and post-quantum cryptography readiness for critical infrastructure operators. Companion CLI self-assessment tool and IEEE SmartNets 2026 paper.">
+<meta property="og:title" content="IMM-CI | Identity Maturity Model for Critical Infrastructure">
+<meta property="og:description" content="A unified 5-level maturity model for IAM, Zero Trust, and PQC readiness — with a runnable self-assessment CLI. Companion artifact to the IEEE SmartNets 2026 paper.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sunilgentyala.github.io/imm-ci-framework/">
+<meta property="og:image" content="https://sunilgentyala.github.io/imm-ci-framework/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IMM-CI | Identity Maturity Model for Critical Infrastructure">
+<meta name="twitter:description" content="A unified 5-level maturity model for IAM, Zero Trust, and PQC readiness — with a runnable self-assessment CLI. Companion artifact to the IEEE SmartNets 2026 paper.">
+<meta name="twitter:image" content="https://sunilgentyala.github.io/imm-ci-framework/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg-alt: #11161d;
+    --card: #151b23;
+    --border: #232b35;
+    --text: #e6edf3;
+    --muted: #9aa7b4;
+    --accent: #4fd1c5;
+    --accent-2: #7c9eff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 70px 0 60px;
+    background: radial-gradient(circle at 20% 20%, rgba(79,209,197,0.12), transparent 45%),
+                radial-gradient(circle at 80% 0%, rgba(124,158,255,0.12), transparent 40%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-top { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+  .hero-top img { width: 56px; height: 56px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(79,209,197,0.4);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0 0 14px;
+    line-height: 1.15;
+  }
+  h1 span { color: var(--accent); }
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin: 0 0 22px;
+    font-style: italic;
+  }
+  .lede {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 0 24px;
+  }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .btn-primary { background: var(--accent); color: #07211f; }
+  .btn-primary:hover { background: #6fe0d5; text-decoration: none; }
+  .btn-secondary { border: 1px solid var(--border); color: var(--text); }
+  .btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 1.6rem;
+    margin: 0 0 10px;
+  }
+  .section-sub { color: var(--muted); margin: 0 0 30px; max-width: 720px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 700px) { .grid, .grid-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 1.02rem;
+    color: var(--text);
+  }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+  .stat { text-align: center; }
+  .stat .num { font-size: 1.9rem; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
+
+  .why-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .why-list li {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 18px;
+    color: var(--muted);
+  }
+  .why-list li strong { color: var(--text); }
+
+  pre {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    color: #c8d3dd;
+  }
+  code {
+    background: rgba(124,158,255,0.12);
+    color: var(--accent-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+  }
+  pre code { background: none; padding: 0; color: inherit; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th { color: var(--accent); font-weight: 600; }
+  td { color: var(--muted); }
+  td:first-child, th:first-child { color: var(--text); }
+  .table-wrap { overflow-x: auto; }
+
+  .level-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(79,209,197,0.15); color: var(--accent);
+    font-weight: 700; font-size: 0.85rem;
+  }
+
+  .cite {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .disclosure {
+    font-size: 0.85rem;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+
+  .author-card { padding: 16px 18px; }
+  .author-card .name { color: var(--text); font-weight: 600; margin-bottom: 4px; }
+  .author-card .role { color: var(--muted); font-size: 0.88rem; margin-bottom: 4px; }
+  .author-card .email { font-size: 0.85rem; }
+
+  footer {
+    padding: 40px 0 60px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <img src="icon-512.png" alt="IMM-CI logo">
+      <span class="eyebrow" style="margin-bottom:0;">Published &middot; IEEE SmartNets 2026 &middot; CyberSec CIIA</span>
+    </div>
+    <h1>IMM-CI: one maturity model for <span>identity, Zero Trust, and PQC</span></h1>
+    <p class="subtitle">"The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure"</p>
+    <p class="lede">
+      The <strong style="color:var(--text)">Identity Maturity Model for Critical Infrastructure (IMM-CI)</strong>
+      evaluates an organization's IAM capability, Zero Trust posture, and post-quantum cryptography readiness
+      as one unified progression, not three separate workstreams. This repository is the companion CLI
+      self-assessment tool for the model, scoring an environment across all three dimensions and flagging the
+      Level 2&rarr;3 stall pattern that most industrial operators hit.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/sunilgentyala/imm-ci-framework">View on GitHub</a>
+      <a class="btn btn-secondary" href="https://ieeexplore.ieee.org/document/11604842">IEEE Xplore</a>
+      <a class="btn btn-secondary" href="https://github.com/sunilgentyala/imm-ci-framework/blob/main/CITATION.cff">Cite this work</a>
+    </div>
+  </div>
+</header>
+
+<section id="model">
+  <div class="wrap">
+    <h2>The five levels</h2>
+    <p class="section-sub">
+      Most IAM maturity models treat IAM, Zero Trust, and PQC as independent tracks. IMM-CI integrates them because
+      they are genuinely interdependent: your PQC migration choices are constrained by your current authentication
+      infrastructure; your Zero Trust posture determines how much blast radius a compromised identity can create.
+      A Level 3 IAM posture combined with Level 1 PQC readiness is a specific, identifiable risk, and the model
+      makes that asymmetry visible.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Level</th><th>Stage</th><th>IAM</th><th>Zero Trust</th><th>PQC</th>
+        </tr>
+        <tr>
+          <td><span class="level-badge">1</span></td><td>Foundational</td>
+          <td>Password auth, basic RBAC, manual JML</td>
+          <td>Perimeter-based</td>
+          <td>Classical only (RSA, ECC)</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">2</span></td><td>Structured</td>
+          <td>MFA enforced, LDAP/AD, partial ABAC</td>
+          <td>Network segmentation, some ZT policies</td>
+          <td>Crypto inventory documented</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">3</span></td><td>Defined</td>
+          <td>FIDO2/passkeys, SCIM, ITDR deployed</td>
+          <td>Identity as control plane, CAEP/RISC</td>
+          <td>Hybrid classical-PQC in test</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">4</span></td><td>Managed</td>
+          <td>SPIFFE/SPIRE, DIDs piloted, SSF integrated</td>
+          <td>Continuous evaluation, behavioral analytics</td>
+          <td>ML-KEM/ML-DSA in production</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge">5</span></td><td>Optimized</td>
+          <td>Full SSI, verifiable credentials, AI ITDR</td>
+          <td>Full ZTA, cryptographic attestation</td>
+          <td>Cryptographic agility achieved</td>
+        </tr>
+      </table>
+    </div>
+    <p class="section-sub" style="margin-top:20px;">
+      The Level 2 to Level 3 transition is where most industrial operators stall. This tool is designed
+      specifically to diagnose why &mdash; and the composite score uses the weakest-link principle:
+      <code>min(IAM level, ZT level, PQC level)</code>, so a strong IAM posture never masks a weak PQC posture.
+    </p>
+  </div>
+</section>
+
+<section id="quickstart">
+  <div class="wrap">
+    <h2>Quick start</h2>
+    <p class="section-sub">Run the assessor against the included sample profile, or interactively against your own environment.</p>
+<pre><code>git clone https://github.com/sunilgentyala/imm-ci-framework.git
+cd imm-ci-framework
+pip install -r requirements.txt
+
+# Run against the included Lakeshore MWA sample (Level 2 baseline)
+python imm_ci_assessor.py --config config/sample_org.yaml
+
+# Run interactively against your own environment
+python imm_ci_assessor.py --interactive
+
+# Export results to JSON (for GRC integration or audit trail)
+python imm_ci_assessor.py --config config/sample_org.yaml --json-out results.json</code></pre>
+  </div>
+</section>
+
+<section id="sample-output">
+  <div class="wrap">
+    <h2>Sample output</h2>
+    <p class="section-sub">Running against <code>config/sample_org.yaml</code> &mdash; a Level 2 municipal water utility profile.</p>
+<pre><code>======================================================================
+  IMM-CI ASSESSMENT REPORT
+  Lakeshore Metropolitan Water Authority (Pilot Baseline)  |  2026-05-03
+======================================================================
+
+  EXECUTIVE SUMMARY
+  Lakeshore Metropolitan Water Authority assessed at IMM-CI Level 2 (Structured).
+  IAM: L2 | Zero Trust: L2 | PQC Readiness: L2.
+  The organization shows the Level 2-&gt;3 stall pattern identified in the IMM-CI model.
+
+  [IAM Capabilities]  Score: 28.6/100  -&gt;  Level 2
+    Next Steps:
+      -&gt; Implement: FIDO2/passkeys deployed (impact weight: 20)
+      -&gt; Implement: SCIM provisioning active (impact weight: 15)
+
+  [Zero Trust Posture]  Score: 25.0/100  -&gt;  Level 2
+    Next Steps:
+      -&gt; Implement: Identity is the control plane (impact weight: 20)
+
+  [PQC Readiness]  Score: 18.2/100  -&gt;  Level 2
+    Next Steps:
+      -&gt; Implement: Cryptographic agility achieved (impact weight: 25)
+
+  COMPOSITE LEVEL: 2/5
+  *** L2-&gt;L3 STALL PATTERN DETECTED -- see Section XII of IMM-CI paper ***
+======================================================================</code></pre>
+  </div>
+</section>
+
+<section id="validation">
+  <div class="wrap">
+    <h2>Empirical validation</h2>
+    <p class="section-sub">
+      The level definitions were validated against a structured 18-month pilot at a municipal water authority
+      (14 treatment facilities, Siemens SIMATIC S7-300/400 PLCs, Wonderware SCADA). The pilot confirmed Level 2
+      at baseline and Level 3 post-implementation.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Metric</th><th>Baseline (L2)</th><th>Post-Pilot (L3)</th></tr>
+        <tr><td>Deprovisioning latency (mean)</td><td>5.2 days</td><td>2.8 hours (-93%)</td></tr>
+        <tr><td>FIDO2 on privileged accounts</td><td>0%</td><td>100%</td></tr>
+        <tr><td>Machine identity w/ defined expiry</td><td>34%</td><td>91%</td></tr>
+        <tr><td>Machine identity w/ auto-rotation</td><td>11%</td><td>68%</td></tr>
+        <tr><td>Password-only on OT-access systems</td><td>Present</td><td>Eliminated</td></tr>
+        <tr><td>Open NERC CIP audit findings</td><td>2</td><td>0</td></tr>
+        <tr><td>ITDR high-severity events (90 days)</td><td>None detected</td><td>12 confirmed</td></tr>
+      </table>
+    </div>
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="card stat">
+        <div class="num">45</div>
+        <div class="label">unit tests passing (dimension scoring, composite level, stall detection, cross-sector ordering)</div>
+      </div>
+      <div class="card stat">
+        <div class="num">4</div>
+        <div class="label">sector profiles included: energy (L1), healthcare (L2), water (L3 post-pilot), financial (L4)</div>
+      </div>
+      <div class="card stat">
+        <div class="num">11</div>
+        <div class="label">standards the rubric grounds to: NIST 800-63-4, ISO/IEC 24760-1, FIPS 203/204, SPIFFE, CAEP/SSF, and more</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="standards">
+  <div class="wrap">
+    <h2>Grounding standards</h2>
+    <p class="section-sub">The IMM-CI rubric maps directly to published standards rather than ad-hoc criteria.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Control area</th><th>Standard</th></tr>
+        <tr><td>Identity Assurance Levels</td><td>NIST SP 800-63-4 (2025)</td></tr>
+        <tr><td>Identity Management Vocabulary</td><td>ISO/IEC 24760-1:2024</td></tr>
+        <tr><td>Entity Authentication Assurance</td><td>ISO/IEC 29115:2013</td></tr>
+        <tr><td>Passwordless Authentication</td><td>FIDO2/WebAuthn; NIST SP 800-63-4 AAL2</td></tr>
+        <tr><td>Provisioning</td><td>RFC 7643 (SCIM Core Schema)</td></tr>
+        <tr><td>Machine Identity</td><td>SPIFFE/SPIRE (CNCF, 2024)</td></tr>
+        <tr><td>Continuous Session Evaluation</td><td>OpenID CAEP 1.0; OpenID SSF 1.0</td></tr>
+        <tr><td>Key Encapsulation (PQC)</td><td>FIPS 203 &mdash; ML-KEM (August 2024)</td></tr>
+        <tr><td>Digital Signatures (PQC)</td><td>FIPS 204 &mdash; ML-DSA (August 2024)</td></tr>
+        <tr><td>Zero Trust Architecture</td><td>NIST SP 800-207</td></tr>
+        <tr><td>Verifiable Credentials</td><td>W3C VC Data Model v2.0 (2024)</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="cite">
+  <div class="wrap">
+    <h2>How to cite</h2>
+    <p class="section-sub">If you use this tool or the IMM-CI framework in your research, please cite the companion paper.</p>
+    <div class="cite">
+<pre><code>@inproceedings{gentyala2026metamorphosis,
+  author    = {Gentyala, Sunil and Caprio, Floriano and Mudusu, Sunil Kumar
+               and Darisi, Suresh Kumar and Allani, Satish Kumar},
+  title     = {The Metamorphosis of Access: Strategic Imperatives for Identity 3.0
+               and Zero Trust Integration in Critical Infrastructure},
+  booktitle = {Proceedings of SmartNets 2026 -- International Conference on Smart
+               Applications, Communications and Networking (CyberSec CIIA Track)},
+  year      = {2026},
+  publisher = {IEEE},
+  note      = {EDAS Paper ID: 1571252869.},
+  url       = {https://ieeexplore.ieee.org/document/11604842}
+}</code></pre>
+      <p style="margin:14px 0 0;">
+        <strong style="color:var(--text);">IEEE format:</strong>
+        S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access:
+        Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in
+        <em>Proc. SmartNets 2026 &mdash; Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)</em>,
+        IEEE, 2026. Available:
+        <a href="https://ieeexplore.ieee.org/document/11604842">ieeexplore.ieee.org/document/11604842</a>
+      </p>
+      <p style="margin:14px 0 0;">
+        To cite the software itself, use the
+        <a href="https://github.com/sunilgentyala/imm-ci-framework/blob/main/CITATION.cff">CITATION.cff</a>
+        file in the repository &mdash; GitHub surfaces a "Cite this repository" button automatically.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="authors">
+  <div class="wrap">
+    <h2>Authors</h2>
+    <div class="grid">
+      <div class="card author-card">
+        <div class="name">Sunil Gentyala &mdash; IEEE Senior Member</div>
+        <div class="role">Lead Cybersecurity and AI Security Consultant, HCLTech (HCL America Inc.), Dallas, TX, USA</div>
+        <div class="email"><a href="mailto:sunil.gentyala@ieee.org">sunil.gentyala@ieee.org</a></div>
+      </div>
+      <div class="card author-card">
+        <div class="name">Floriano Caprio</div>
+        <div class="role">Senior Solution Architect, HPC &amp; AI Specialist, Quantum Computing, HCLTech (Italy), Rome, Italy</div>
+        <div class="email"><a href="mailto:floriano.caprio@hcltech.com">floriano.caprio@hcltech.com</a></div>
+      </div>
+      <div class="card author-card">
+        <div class="name">Sunil Kumar Mudusu</div>
+        <div class="role">Principal AI and Data Engineer, Church Mutual Insurance Company, Austin, TX, USA</div>
+        <div class="email"><a href="mailto:sunil.mudusu@ieee.org">sunil.mudusu@ieee.org</a></div>
+      </div>
+      <div class="card author-card">
+        <div class="name">Suresh Kumar Darisi</div>
+        <div class="role">Senior Systems Engineer, Rocket Software Inc., Boston, MA, USA</div>
+        <div class="email"><a href="mailto:Darisi.suresh@ieee.org">Darisi.suresh@ieee.org</a></div>
+      </div>
+      <div class="card author-card">
+        <div class="name">Satish Kumar Allani</div>
+        <div class="role">Enterprise Vulnerability &amp; Patch Management Lead, Yash Technologies, Aurora, IL, USA</div>
+        <div class="email"><a href="mailto:Satishkumarallani@ieee.org">Satishkumarallani@ieee.org</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      <strong style="color:var(--text);">License note:</strong> This repository contains only the companion
+      MIT-licensed software artifact, not the manuscript. Copyright in the associated paper was transferred to
+      IEEE. See the <a href="https://github.com/sunilgentyala/imm-ci-framework#license">License section</a> of
+      the README for the full Author Online Use policy.
+    </div>
+    <p>
+      &copy; 2026 Sunil Gentyala &middot;
+      <a href="https://github.com/sunilgentyala/imm-ci-framework">GitHub</a> &middot;
+      <a href="https://ieeexplore.ieee.org/document/11604842">IEEE Xplore</a> &middot;
+      MIT License
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
