@@ -11,7 +11,7 @@ Companion artifact to the IEEE SmartNets 2026 paper:
 
 > **"The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure"**
 > Sunil Gentyala, Floriano Caprio, Sunil Kumar Mudusu, Suresh Kumar Darisi, Satish Kumar Allani
-> *SmartNets 2026 -- CyberSec CIIA | Published in IEEE Xplore: [ieeexplore.ieee.org/document/11604842](https://ieeexplore.ieee.org/document/11604842)*
+> *SmartNets 2026 -- CyberSec CIIA | Published in IEEE Xplore: [ieeexplore.ieee.org/document/11604842](https://ieeexplore.ieee.org/document/11604842) | DOI: [10.1109/SmartNets69662.2026.11604842](https://ieeexplore.ieee.org/document/11604842)*
 
 ---
 
@@ -227,13 +227,14 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
   year      = {2026},
   publisher = {IEEE},
   note      = {EDAS Paper ID: 1571252869.},
+  doi       = {10.1109/SmartNets69662.2026.11604842},
   url       = {https://ieeexplore.ieee.org/document/11604842}
 }
 ```
 
 ### IEEE Format
 
-S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026. Available: https://ieeexplore.ieee.org/document/11604842
+S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026, doi: 10.1109/SmartNets69662.2026.11604842.
 
 ### Software Citation
 
