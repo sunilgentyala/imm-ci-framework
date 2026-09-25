@@ -73,3 +73,31 @@ references:
     doi: "10.1109/SmartNets69662.2026.11604842"
     url: "https://ieeexplore.ieee.org/document/11604842"
     notes: "EDAS Paper ID: 1571252869."
+preferred-citation:
+  type: conference-paper
+  title: 'The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust
+    Integration in Critical Infrastructure'
+  authors:
+  - family-names: Gentyala
+    given-names: Sunil
+    affiliation: HCLTech (HCL America Inc.), Dallas, TX, USA
+    orcid: https://orcid.org/0009-0005-2642-3479
+    email: sunil.gentyala@ieee.org
+  - family-names: Caprio
+    given-names: Floriano
+  - family-names: Mudusu
+    given-names: Sunil Kumar
+  - family-names: Darisi
+    given-names: Suresh Kumar
+  - family-names: Allani
+    given-names: Satish Kumar
+  collection-title: 2026 International Conference on Smart Applications, Communications and
+    Networking (SmartNets)
+  collection-type: proceedings
+  publisher:
+    name: IEEE
+  year: 2026
+  start: 1
+  end: 6
+  doi: 10.1109/SmartNets69662.2026.11604842
+  url: https://doi.org/10.1109/SmartNets69662.2026.11604842

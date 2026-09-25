@@ -224,6 +224,7 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
                and Zero Trust Integration in Critical Infrastructure},
   booktitle = {Proceedings of SmartNets 2026 -- International Conference on Smart
                Applications, Communications and Networking (CyberSec CIIA Track)},
+  pages     = {1--6},
   year      = {2026},
   publisher = {IEEE},
   note      = {EDAS Paper ID: 1571252869.},
@@ -234,11 +235,11 @@ If you use this tool or the IMM-CI framework in your research, please cite the c
 
 ### IEEE Format
 
-S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026, doi: 10.1109/SmartNets69662.2026.11604842.
+S. Gentyala, F. Caprio, S. K. Mudusu, S. K. Darisi, and S. K. Allani, "The Metamorphosis of Access: Strategic Imperatives for Identity 3.0 and Zero Trust Integration in Critical Infrastructure," in *Proc. SmartNets 2026 -- Int. Conf. Smart Applications, Communications and Networking (CyberSec CIIA)*, IEEE, 2026, pp. 1-6, doi: 10.1109/SmartNets69662.2026.11604842.
 
 ### Software Citation
 
-To cite this tool specifically, use the `CITATION.cff` file in this repository. GitHub will surface a "Cite this repository" button automatically.
+The `CITATION.cff` file in this repository points GitHub's "Cite this repository" button at the published paper above; it also carries the software metadata for citing the tool itself.
 
 ---
 
